@@ -20,18 +20,27 @@ const buttonsOpenModal = document.querySelectorAll('.show-modal');
 } */
 
 
-
-for (let i = 0; i < buttonsOpenModal.length; i++) 
+//remove "naknadna" function for this more complex version to work
+/* for (let i = 0; i < buttonsOpenModal.length; i++) 
 {
     buttonsOpenModal[i].addEventListener('click',function() {
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
     });
+} */
+const openModal = function() {
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
 }
 
 const closeModal = function () { 
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
+}
+
+//naknadna
+for (let i = 0; i < buttonsOpenModal.length; i++) {
+    buttonsOpenModal[i].addEventListener('click',openModal);
 }
 
 buttonCloseModal.addEventListener("click",closeModal);
