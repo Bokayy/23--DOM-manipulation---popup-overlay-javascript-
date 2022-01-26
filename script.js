@@ -45,3 +45,29 @@ for (let i = 0; i < buttonsOpenModal.length; i++) {
 
 buttonCloseModal.addEventListener("click",closeModal);
 overlay.addEventListener("click",closeModal);
+
+/* 26.1.2022 - predavanje dan nakon */
+
+//escape key functionality
+/* document.addEventListener("keydown", function(event)
+{
+    if (event.key === "Escape")
+    {
+        if (modal.classList.contains("hidden"))
+        {
+            closeModal();
+        }
+    }
+
+    /*     console.log(event);
+    console.log(event.key); */
+//}); */
+
+//escape key functionality - less code edition
+document.addEventListener("keydown", function(event) {
+    if(event.key === "Escape" && !modal.classList.contains("hidden")){
+        closeModal();
+    }
+    //we close the popup by ADDING the "hidden" class to all modal classes
+    //therefore we must use a negation. The code is kinda confusing.
+});
